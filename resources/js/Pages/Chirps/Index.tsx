@@ -4,8 +4,8 @@ import { PageProps } from '@/types';
 import { Head, Link } from '@inertiajs/react';
 
 export default function ChripsIndex(props: PageProps) {
-    const { chirps, translations } = props;
-    console.log(translations);
+    const { chirps } = props;
+
     return (
         <AuthenticatedLayout
             header={

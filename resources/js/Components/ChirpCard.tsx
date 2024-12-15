@@ -15,7 +15,7 @@ const ChirpCard: React.FC<ChirpCardProps> = ({ chirp }) => {
 
     const onDelete = () => setShowOnDelete(true);
     const onConfirm = () => {
-        deleteChirp(route('chirps.destroy', chirp.id));
+        deleteChirp(route('chirps.destroy', chirp));
         setShowOnDelete(false);
     };
     const onCancel = () => {
