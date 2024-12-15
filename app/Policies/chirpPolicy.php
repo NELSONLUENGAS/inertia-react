@@ -5,6 +5,7 @@ namespace App\Policies;
 use App\Models\Chirp;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
+use Illuminate\Support\Facades\Log;
 
 class chirpPolicy
 {
@@ -37,7 +38,7 @@ class chirpPolicy
      */
     public function update(User $user, Chirp $chirp): bool
     {
-        dump($user, $chirp);
+        Log::info('Update Check:', ['user' => $user, 'chirp' => $chirp]);
         return $user->is($chirp->user);
     }
 
@@ -46,7 +47,7 @@ class chirpPolicy
      */
     public function delete(User $user, Chirp $chirp): bool
     {
-        dump($user, $chirp);
+        Log::info('Delete Check:', ['user' => $user, 'chirp' => $chirp]);
         return  $user->is($chirp->user);
     }
 
