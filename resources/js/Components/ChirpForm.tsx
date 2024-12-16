@@ -23,7 +23,7 @@ const ChirpForm: React.FC<ChirpFormProps> = ({
                     reset();
                     if (setEditting) setEditting(false);
                 },
-                preserveState: true,
+                preserveState: false,
             });
         } else {
             post(route('chirps.store'), {

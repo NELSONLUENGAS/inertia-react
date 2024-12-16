@@ -28,9 +28,6 @@ class AppServiceProvider extends ServiceProvider
         Vite::prefetch(concurrency: 3);
         JsonResource::withoutWrapping();
 
-        Gate::define('update-chirp', [chirpPolicy::class, 'update']);
-        Gate::define('delete-chirp', [ChirpPolicy::class, 'delete']);
-
         if (App::isProduction()) URL::forceHttps();
     }
 }
