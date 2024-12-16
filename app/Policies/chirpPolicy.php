@@ -38,8 +38,7 @@ class chirpPolicy
      */
     public function update(User $user, Chirp $chirp): bool
     {
-        error_log('User: ' . json_encode($user));
-        error_log('Chirp: ' . json_encode($chirp));
+        Log::info('Update Check:', ['user' => $user, 'chirp' => $chirp]);
         return $user->is($chirp->user);
     }
 
@@ -48,8 +47,7 @@ class chirpPolicy
      */
     public function delete(User $user, Chirp $chirp): bool
     {
-        error_log('User: ' . json_encode($user));
-        error_log('Chirp: ' . json_encode($chirp));
+        Log::info('Delete Check:', ['user' => $user, 'chirp' => $chirp]);
         return  $user->is($chirp->user);
     }
 
