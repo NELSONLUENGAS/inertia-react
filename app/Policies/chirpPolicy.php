@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Auth\Access\Response;
 use Illuminate\Support\Facades\Log;
 
-class chirpPolicy
+class ChirpPolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -38,7 +38,6 @@ class chirpPolicy
      */
     public function update(User $user, Chirp $chirp): bool
     {
-        dd($user, $chirp->user);
         return $user->is($chirp->user);
     }
 
