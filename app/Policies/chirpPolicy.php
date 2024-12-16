@@ -38,7 +38,7 @@ class chirpPolicy
      */
     public function update(User $user, Chirp $chirp): bool
     {
-        dump($user, $chirp->user);
+        dd($user, $chirp->user);
         return $user->is($chirp->user);
     }
 
